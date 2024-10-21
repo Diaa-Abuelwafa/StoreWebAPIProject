@@ -46,10 +46,10 @@ namespace WebAPIStore.Controllers
         {
             if(Id is null)
             {
-                return BadRequest();
+                return null;
             }
 
-            ProductDTO Product = ProductService.GetProductById(Id);
+            ProductDTO Product = ProductService.GetProductById((int)Id);
 
             if(Product is not null)
             {

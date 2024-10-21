@@ -2,6 +2,7 @@
 using DomainStore.Models;
 using Microsoft.EntityFrameworkCore;
 using RepositoryStore.Data.Contexts;
+using RepositoryStore.Helpers;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -27,11 +28,11 @@ namespace RepositoryStore.Repositories
             return Context.Set<TEntity>().ToList();
         }
 
-        public TEntity GetById(int? Id)
+        public TEntity GetById(TKey Id)
         {
             if (typeof(TEntity) == typeof(Product))
             {
-                return Context.Products.Include(x => x.Type).Include(x => x.Brand).FirstOrDefault(x => x.Id == Id) as TEntity;
+                return Context.Products.Include(x => x.Type).Include(x => x.Brand).FirstOrDefault(x => x.Id == Id as int?) as TEntity;
             }
 
             return Context.Set<TEntity>().Find(Id);
@@ -48,6 +49,16 @@ namespace RepositoryStore.Repositories
         public void Delete(TEntity Item)
         {
             Context.Remove(Item);
+        }
+
+        public List<TEntity> GetAllWithSpec(ISpecifications<TEntity, TKey> Spec)
+        {
+            return EvaluatorSpecifications<TEntity, TKey>.GetQuery(Context.Set<TEntity>(), Spec).ToList();
+        }
+
+        public TEntity GetByIdWithSpec(ISpecifications<TEntity, TKey> Spec)
+        {
+            return EvaluatorSpecifications<TEntity, TKey>.GetQuery(Context.Set<TEntity>(), Spec).FirstOrDefault();
         }
     }
 }

@@ -13,3 +13,4 @@ D:\Technologies\Backend\8- Asp.Net Web APIs\WebAPIProjectRoute\WebAPIProject Sol
 D:\Technologies\Backend\8- Asp.Net Web APIs\WebAPIProjectRoute\WebAPIProject Solution\RepositoryStore\obj\Debug\net8.0\refint\RepositoryStore.dll
 D:\Technologies\Backend\8- Asp.Net Web APIs\WebAPIProjectRoute\WebAPIProject Solution\RepositoryStore\obj\Debug\net8.0\RepositoryStore.pdb
 D:\Technologies\Backend\8- Asp.Net Web APIs\WebAPIProjectRoute\WebAPIProject Solution\RepositoryStore\obj\Debug\net8.0\ref\RepositoryStore.dll
+D:\Technologies\Backend\8- Asp.Net Web APIs\WebAPIProjectRoute\WebAPIProject Solution\RepositoryStore\obj\Debug\net8.0\RepositoryStore.sourcelink.json

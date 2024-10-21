@@ -11,7 +11,7 @@ namespace DomainStore.Interfaces
     public interface IProductService
     {
         public List<ProductDTO> GetAllProducts();
-        public ProductDTO GetProductById(int? Id);
+        public ProductDTO GetProductById(int Id);
         public List<TypeBrandDTO> GetAllBrands();
         public List<TypeBrandDTO> GetAllTypes();
     }

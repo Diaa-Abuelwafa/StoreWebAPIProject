@@ -1,6 +1,7 @@
 ﻿using DomainStore.DTOs.ProductDTOs;
 using DomainStore.Interfaces;
 using DomainStore.Models;
+using DomainStore.Specifications;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -39,7 +40,11 @@ namespace ServiceStore.Services
 
         public List<ProductDTO> GetAllProducts()
         {
-            List<Product> Products = Unit.GetRepo<Product, int>().GetAll();
+            Specifications<Product, int> Spec = new Specifications<Product, int>();
+            Spec.Includes.Add(P => P.Brand);
+            Spec.Includes.Add(P => P.Type);
+
+            List<Product> Products = Unit.GetRepo<Product, int>().GetAllWithSpec(Spec);
 
             List<ProductDTO> ProductsDto = new List<ProductDTO>();
 
@@ -82,9 +87,15 @@ namespace ServiceStore.Services
             return Types;
         }
 
-        public ProductDTO GetProductById(int? Id)
+        public ProductDTO GetProductById(int Id)
         {
-            Product P = Unit.GetRepo<Product, int>().GetById(Id);
+            Specifications<Product, int> Spec = new Specifications<Product, int>();
+
+            Spec.Criteria = P => P.Id == Id;
+            Spec.Includes.Add(P => P.Brand);
+            Spec.Includes.Add(P => P.Type);
+
+            Product P = Unit.GetRepo<Product, int>().GetByIdWithSpec(Spec);
 
             if(P is null)
             {
