@@ -1,0 +1,15 @@
+D:\Technologies\Backend\8- Asp.Net Web APIs\WebAPIProjectRoute\WebAPIProject Solution\RepositoryStore\bin\Debug\net8.0\RepositoryStore.deps.json
+D:\Technologies\Backend\8- Asp.Net Web APIs\WebAPIProjectRoute\WebAPIProject Solution\RepositoryStore\bin\Debug\net8.0\RepositoryStore.dll
+D:\Technologies\Backend\8- Asp.Net Web APIs\WebAPIProjectRoute\WebAPIProject Solution\RepositoryStore\bin\Debug\net8.0\RepositoryStore.pdb
+D:\Technologies\Backend\8- Asp.Net Web APIs\WebAPIProjectRoute\WebAPIProject Solution\RepositoryStore\bin\Debug\net8.0\DomainStore.dll
+D:\Technologies\Backend\8- Asp.Net Web APIs\WebAPIProjectRoute\WebAPIProject Solution\RepositoryStore\bin\Debug\net8.0\DomainStore.pdb
+D:\Technologies\Backend\8- Asp.Net Web APIs\WebAPIProjectRoute\WebAPIProject Solution\RepositoryStore\obj\Debug\net8.0\RepositoryStore.csproj.AssemblyReference.cache
+D:\Technologies\Backend\8- Asp.Net Web APIs\WebAPIProjectRoute\WebAPIProject Solution\RepositoryStore\obj\Debug\net8.0\RepositoryStore.GeneratedMSBuildEditorConfig.editorconfig
+D:\Technologies\Backend\8- Asp.Net Web APIs\WebAPIProjectRoute\WebAPIProject Solution\RepositoryStore\obj\Debug\net8.0\RepositoryStore.AssemblyInfoInputs.cache
+D:\Technologies\Backend\8- Asp.Net Web APIs\WebAPIProjectRoute\WebAPIProject Solution\RepositoryStore\obj\Debug\net8.0\RepositoryStore.AssemblyInfo.cs
+D:\Technologies\Backend\8- Asp.Net Web APIs\WebAPIProjectRoute\WebAPIProject Solution\RepositoryStore\obj\Debug\net8.0\RepositoryStore.csproj.CoreCompileInputs.cache
+D:\Technologies\Backend\8- Asp.Net Web APIs\WebAPIProjectRoute\WebAPIProject Solution\RepositoryStore\obj\Debug\net8.0\Reposito.3857B689.Up2Date
+D:\Technologies\Backend\8- Asp.Net Web APIs\WebAPIProjectRoute\WebAPIProject Solution\RepositoryStore\obj\Debug\net8.0\RepositoryStore.dll
+D:\Technologies\Backend\8- Asp.Net Web APIs\WebAPIProjectRoute\WebAPIProject Solution\RepositoryStore\obj\Debug\net8.0\refint\RepositoryStore.dll
+D:\Technologies\Backend\8- Asp.Net Web APIs\WebAPIProjectRoute\WebAPIProject Solution\RepositoryStore\obj\Debug\net8.0\RepositoryStore.pdb
+D:\Technologies\Backend\8- Asp.Net Web APIs\WebAPIProjectRoute\WebAPIProject Solution\RepositoryStore\obj\Debug\net8.0\ref\RepositoryStore.dll

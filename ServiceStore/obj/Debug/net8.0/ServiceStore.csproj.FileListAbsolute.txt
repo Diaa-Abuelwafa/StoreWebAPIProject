@@ -1,0 +1,17 @@
+D:\Technologies\Backend\8- Asp.Net Web APIs\WebAPIProjectRoute\WebAPIProject Solution\ServiceStore\bin\Debug\net8.0\ServiceStore.deps.json
+D:\Technologies\Backend\8- Asp.Net Web APIs\WebAPIProjectRoute\WebAPIProject Solution\ServiceStore\bin\Debug\net8.0\ServiceStore.dll
+D:\Technologies\Backend\8- Asp.Net Web APIs\WebAPIProjectRoute\WebAPIProject Solution\ServiceStore\bin\Debug\net8.0\ServiceStore.pdb
+D:\Technologies\Backend\8- Asp.Net Web APIs\WebAPIProjectRoute\WebAPIProject Solution\ServiceStore\bin\Debug\net8.0\DomainStore.dll
+D:\Technologies\Backend\8- Asp.Net Web APIs\WebAPIProjectRoute\WebAPIProject Solution\ServiceStore\bin\Debug\net8.0\RepositoryStore.dll
+D:\Technologies\Backend\8- Asp.Net Web APIs\WebAPIProjectRoute\WebAPIProject Solution\ServiceStore\bin\Debug\net8.0\RepositoryStore.pdb
+D:\Technologies\Backend\8- Asp.Net Web APIs\WebAPIProjectRoute\WebAPIProject Solution\ServiceStore\bin\Debug\net8.0\DomainStore.pdb
+D:\Technologies\Backend\8- Asp.Net Web APIs\WebAPIProjectRoute\WebAPIProject Solution\ServiceStore\obj\Debug\net8.0\ServiceStore.csproj.AssemblyReference.cache
+D:\Technologies\Backend\8- Asp.Net Web APIs\WebAPIProjectRoute\WebAPIProject Solution\ServiceStore\obj\Debug\net8.0\ServiceStore.GeneratedMSBuildEditorConfig.editorconfig
+D:\Technologies\Backend\8- Asp.Net Web APIs\WebAPIProjectRoute\WebAPIProject Solution\ServiceStore\obj\Debug\net8.0\ServiceStore.AssemblyInfoInputs.cache
+D:\Technologies\Backend\8- Asp.Net Web APIs\WebAPIProjectRoute\WebAPIProject Solution\ServiceStore\obj\Debug\net8.0\ServiceStore.AssemblyInfo.cs
+D:\Technologies\Backend\8- Asp.Net Web APIs\WebAPIProjectRoute\WebAPIProject Solution\ServiceStore\obj\Debug\net8.0\ServiceStore.csproj.CoreCompileInputs.cache
+D:\Technologies\Backend\8- Asp.Net Web APIs\WebAPIProjectRoute\WebAPIProject Solution\ServiceStore\obj\Debug\net8.0\ServiceS.B24E14AF.Up2Date
+D:\Technologies\Backend\8- Asp.Net Web APIs\WebAPIProjectRoute\WebAPIProject Solution\ServiceStore\obj\Debug\net8.0\ServiceStore.dll
+D:\Technologies\Backend\8- Asp.Net Web APIs\WebAPIProjectRoute\WebAPIProject Solution\ServiceStore\obj\Debug\net8.0\refint\ServiceStore.dll
+D:\Technologies\Backend\8- Asp.Net Web APIs\WebAPIProjectRoute\WebAPIProject Solution\ServiceStore\obj\Debug\net8.0\ServiceStore.pdb
+D:\Technologies\Backend\8- Asp.Net Web APIs\WebAPIProjectRoute\WebAPIProject Solution\ServiceStore\obj\Debug\net8.0\ref\ServiceStore.dll

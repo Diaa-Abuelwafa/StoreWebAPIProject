@@ -1,0 +1,12 @@
+D:\Technologies\Backend\8- Asp.Net Web APIs\WebAPIProjectRoute\WebAPIProject Solution\DomainStore\bin\Debug\net8.0\DomainStore.deps.json
+D:\Technologies\Backend\8- Asp.Net Web APIs\WebAPIProjectRoute\WebAPIProject Solution\DomainStore\bin\Debug\net8.0\DomainStore.dll
+D:\Technologies\Backend\8- Asp.Net Web APIs\WebAPIProjectRoute\WebAPIProject Solution\DomainStore\bin\Debug\net8.0\DomainStore.pdb
+D:\Technologies\Backend\8- Asp.Net Web APIs\WebAPIProjectRoute\WebAPIProject Solution\DomainStore\obj\Debug\net8.0\DomainStore.csproj.AssemblyReference.cache
+D:\Technologies\Backend\8- Asp.Net Web APIs\WebAPIProjectRoute\WebAPIProject Solution\DomainStore\obj\Debug\net8.0\DomainStore.GeneratedMSBuildEditorConfig.editorconfig
+D:\Technologies\Backend\8- Asp.Net Web APIs\WebAPIProjectRoute\WebAPIProject Solution\DomainStore\obj\Debug\net8.0\DomainStore.AssemblyInfoInputs.cache
+D:\Technologies\Backend\8- Asp.Net Web APIs\WebAPIProjectRoute\WebAPIProject Solution\DomainStore\obj\Debug\net8.0\DomainStore.AssemblyInfo.cs
+D:\Technologies\Backend\8- Asp.Net Web APIs\WebAPIProjectRoute\WebAPIProject Solution\DomainStore\obj\Debug\net8.0\DomainStore.csproj.CoreCompileInputs.cache
+D:\Technologies\Backend\8- Asp.Net Web APIs\WebAPIProjectRoute\WebAPIProject Solution\DomainStore\obj\Debug\net8.0\DomainStore.dll
+D:\Technologies\Backend\8- Asp.Net Web APIs\WebAPIProjectRoute\WebAPIProject Solution\DomainStore\obj\Debug\net8.0\refint\DomainStore.dll
+D:\Technologies\Backend\8- Asp.Net Web APIs\WebAPIProjectRoute\WebAPIProject Solution\DomainStore\obj\Debug\net8.0\DomainStore.pdb
+D:\Technologies\Backend\8- Asp.Net Web APIs\WebAPIProjectRoute\WebAPIProject Solution\DomainStore\obj\Debug\net8.0\ref\DomainStore.dll
