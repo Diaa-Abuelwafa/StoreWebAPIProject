@@ -21,7 +21,9 @@ namespace ServiceStore.Services
 
         public List<TypeBrandDTO> GetAllBrands()
         {
-            List<ProductBrand> ProductBrands = Unit.GetRepo<ProductBrand, int>().GetAll();
+            Specifications<ProductBrand, int> Spec = new Specifications<ProductBrand, int>();
+
+            List<ProductBrand> ProductBrands = Unit.GetRepo<ProductBrand, int>().GetAllWithSpec(Spec);
 
             List<TypeBrandDTO> Brands = new List<TypeBrandDTO>();
 
@@ -40,9 +42,7 @@ namespace ServiceStore.Services
 
         public List<ProductDTO> GetAllProducts()
         {
-            Specifications<Product, int> Spec = new Specifications<Product, int>();
-            Spec.Includes.Add(P => P.Brand);
-            Spec.Includes.Add(P => P.Type);
+            ProductSpecifications Spec = new ProductSpecifications();
 
             List<Product> Products = Unit.GetRepo<Product, int>().GetAllWithSpec(Spec);
 
@@ -70,7 +70,9 @@ namespace ServiceStore.Services
 
         public List<TypeBrandDTO> GetAllTypes()
         {
-            List<ProductType> ProductTypes = Unit.GetRepo<ProductType, int>().GetAll();
+            Specifications<ProductType, int> Spec = new Specifications<ProductType, int>();
+
+            List<ProductType> ProductTypes = Unit.GetRepo<ProductType, int>().GetAllWithSpec(Spec);
 
             List<TypeBrandDTO> Types = new List<TypeBrandDTO>();
 
@@ -89,11 +91,8 @@ namespace ServiceStore.Services
 
         public ProductDTO GetProductById(int Id)
         {
-            Specifications<Product, int> Spec = new Specifications<Product, int>();
 
-            Spec.Criteria = P => P.Id == Id;
-            Spec.Includes.Add(P => P.Brand);
-            Spec.Includes.Add(P => P.Type);
+            ProductSpecifications Spec = new ProductSpecifications(Id);
 
             Product P = Unit.GetRepo<Product, int>().GetByIdWithSpec(Spec);
 
