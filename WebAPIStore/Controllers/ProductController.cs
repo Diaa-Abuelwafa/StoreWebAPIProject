@@ -1,4 +1,5 @@
 ﻿using DomainStore.DTOs.ProductDTOs;
+using DomainStore.HelperClasses;
 using DomainStore.Interfaces;
 using DomainStore.Models;
 using Microsoft.AspNetCore.Http;
@@ -17,9 +18,9 @@ namespace WebAPIStore.Controllers
         }
 
         [HttpGet]
-        public IActionResult GetAllProducts()
+        public IActionResult GetAllProducts([FromQuery] ProductSpecParams Spec)
         {
-            List<ProductDTO> Products = ProductService.GetAllProducts();
+            PaginationResponse<ProductDTO> Products = ProductService.GetAllProducts(Spec.Sort, Spec.TypeId, Spec.BrandId, Spec.PageIndex, Spec.PageSize, Spec.SearchByName);
 
             return Ok(Products);
         }

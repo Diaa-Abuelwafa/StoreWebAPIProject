@@ -57,6 +57,8 @@ namespace WebAPIStore
                 app.UseSwaggerUI();
             }
 
+            app.UseStaticFiles();
+
             app.UseHttpsRedirection();
 
             app.MapControllers();

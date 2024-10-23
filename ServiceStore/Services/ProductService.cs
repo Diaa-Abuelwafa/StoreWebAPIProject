@@ -1,22 +1,27 @@
 ﻿using DomainStore.DTOs.ProductDTOs;
+using DomainStore.HelperClasses;
 using DomainStore.Interfaces;
 using DomainStore.Models;
 using DomainStore.Specifications;
+using Microsoft.Extensions.Configuration;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static System.Net.WebRequestMethods;
 
 namespace ServiceStore.Services
 {
     public class ProductService : IProductService
     {
         private readonly IUnitOfWork Unit;
+        private readonly IConfiguration Config;
 
-        public ProductService(IUnitOfWork UnitOfWork)
+        public ProductService(IUnitOfWork UnitOfWork, IConfiguration Config)
         {
             Unit = UnitOfWork;
+            this.Config = Config;
         }
 
         public List<TypeBrandDTO> GetAllBrands()
@@ -40,9 +45,9 @@ namespace ServiceStore.Services
             return Brands;
         }
 
-        public List<ProductDTO> GetAllProducts()
+        public PaginationResponse<ProductDTO> GetAllProducts(string? Sort, int? TypeId, int? BrandId, int? PageIndex, int? PageSize, string? SearchByName)
         {
-            ProductSpecifications Spec = new ProductSpecifications();
+            ProductSpecifications Spec = new ProductSpecifications(Sort, TypeId, BrandId, PageIndex, PageSize, SearchByName);
 
             List<Product> Products = Unit.GetRepo<Product, int>().GetAllWithSpec(Spec);
 
@@ -55,7 +60,7 @@ namespace ServiceStore.Services
                 P.Id = M.Id;
                 P.Name = M.Name;
                 P.Description = M.Description;
-                P.PictureUrl = M.PictureUrl;
+                P.PictureUrl = $"{Config["BaseUrl"]}{M.PictureUrl}";
                 P.Price = M.Price;
                 P.TypeId = M.TypeId;
                 P.TypeName = M.Type.Name;
@@ -65,7 +70,14 @@ namespace ServiceStore.Services
                 ProductsDto.Add(P);
             }
 
-            return ProductsDto;
+            // To Get Count After Filteration If Exsist
+            ProductSpecifications SpecCriteria = new ProductSpecifications(TypeId:TypeId, BrandId:BrandId, SearchByName:SearchByName);
+            int Count = Unit.GetRepo<Product, int>().GetCountAfterSpecifications(SpecCriteria);
+
+            // Return The Pagination Response
+            PaginationResponse<ProductDTO> ProductsResponse = new PaginationResponse<ProductDTO>(PageIndex, PageSize, Count, ProductsDto);
+
+            return ProductsResponse;
         }
 
         public List<TypeBrandDTO> GetAllTypes()
@@ -106,7 +118,7 @@ namespace ServiceStore.Services
             Product.Id = P.Id;
             Product.Name = P.Name;
             Product.Description = P.Description;
-            Product.PictureUrl = P.PictureUrl;
+            Product.PictureUrl = $"{Config["BaseUrl"]}{P.PictureUrl}";
             Product.Price = P.Price;
             Product.TypeId = P.TypeId;
             Product.TypeName = P.Type.Name;

@@ -60,5 +60,10 @@ namespace RepositoryStore.Repositories
         {
             return EvaluatorSpecifications<TEntity, TKey>.GetQuery(Context.Set<TEntity>(), Spec).FirstOrDefault();
         }
+
+        public int GetCountAfterSpecifications(ISpecifications<TEntity, TKey> Spec)
+        {
+            return EvaluatorSpecifications<TEntity, TKey>.GetQuery(Context.Set<TEntity>(), Spec).Count();
+        }
     }
 }

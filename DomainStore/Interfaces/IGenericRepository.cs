@@ -16,5 +16,6 @@ namespace DomainStore.Interfaces
         public void Delete(TEntity Item);
         public List<TEntity> GetAllWithSpec(ISpecifications<TEntity, TKey> Spec);
         public TEntity GetByIdWithSpec(ISpecifications<TEntity, TKey> Spec);
+        public int GetCountAfterSpecifications(ISpecifications<TEntity, TKey> Spec);
     }
 }

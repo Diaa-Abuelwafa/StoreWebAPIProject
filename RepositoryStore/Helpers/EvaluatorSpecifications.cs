@@ -15,14 +15,30 @@ namespace RepositoryStore.Helpers
         {
             var Query = BaseQuery;
 
-            if(Spec.Criteria is not null)
+            if (Spec.Criteria is not null)
             {
                 Query = Query.Where(Spec.Criteria);
             }
 
-            foreach(var I in Spec.Includes)
+            foreach (var I in Spec.Includes)
             {
                 Query = Query.Include(I);
+            }
+
+            if (Spec.PageIndex is not null && Spec.PageSize is not null)
+            {
+                Query = Query.Skip(((int)Spec.PageIndex - 1) * (int)Spec.PageSize);
+                Query = Query.Take((int)Spec.PageSize);
+            }
+
+            if (Spec.OrderBy is not null)
+            {
+                Query = Query.OrderBy(Spec.OrderBy);
+            }
+
+            if (Spec.OrderByDesc is not null)
+            {
+                Query = Query.OrderByDescending(Spec.OrderByDesc);
             }
 
             return Query;
