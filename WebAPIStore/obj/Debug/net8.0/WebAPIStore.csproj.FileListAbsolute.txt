@@ -148,3 +148,5 @@ D:\Technologies\Backend\8- Asp.Net Web APIs\WebAPIProjectRoute\WebAPIProject Sol
 D:\Technologies\Backend\8- Asp.Net Web APIs\WebAPIProjectRoute\WebAPIProject Solution\WebAPIStore\obj\Debug\net8.0\ref\WebAPIStore.dll
 D:\Technologies\Backend\8- Asp.Net Web APIs\WebAPIProjectRoute\WebAPIProject Solution\WebAPIStore\obj\Debug\net8.0\WebAPIStore.sourcelink.json
 D:\Technologies\Backend\8- Asp.Net Web APIs\WebAPIProjectRoute\WebAPIProject Solution\WebAPIStore\bin\Debug\net8.0\WebAPIStore.staticwebassets.runtime.json
+D:\Technologies\Backend\8- Asp.Net Web APIs\WebAPIProjectRoute\WebAPIProject Solution\WebAPIStore\bin\Debug\net8.0\Pipelines.Sockets.Unofficial.dll
+D:\Technologies\Backend\8- Asp.Net Web APIs\WebAPIProjectRoute\WebAPIProject Solution\WebAPIStore\bin\Debug\net8.0\StackExchange.Redis.dll

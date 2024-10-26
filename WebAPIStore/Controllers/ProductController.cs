@@ -4,6 +4,8 @@ using DomainStore.Interfaces;
 using DomainStore.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using System.Net;
+using WebAPIStore.Helpers;
 
 namespace WebAPIStore.Controllers
 {
@@ -18,6 +20,7 @@ namespace WebAPIStore.Controllers
         }
 
         [HttpGet]
+        [ProducesResponseType(typeof(List<PaginationResponse<ProductDTO>>), (int)HttpStatusCode.OK)]
         public IActionResult GetAllProducts([FromQuery] ProductSpecParams Spec)
         {
             PaginationResponse<ProductDTO> Products = ProductService.GetAllProducts(Spec.Sort, Spec.TypeId, Spec.BrandId, Spec.PageIndex, Spec.PageSize, Spec.SearchByName);
@@ -27,6 +30,7 @@ namespace WebAPIStore.Controllers
 
         [HttpGet]
         [Route("Brands")]
+        [ProducesResponseType(typeof(List<TypeBrandDTO>), (int)HttpStatusCode.OK)]
         public IActionResult GetAllBrands()
         {
             List<TypeBrandDTO> Brands = ProductService.GetAllBrands();
@@ -35,6 +39,7 @@ namespace WebAPIStore.Controllers
         }
 
         [HttpGet("Types")]
+        [ProducesResponseType(typeof(List<TypeBrandDTO>), (int)HttpStatusCode.OK)]
         public IActionResult GetAllTypes()
         {
             List<TypeBrandDTO> Types = ProductService.GetAllTypes();
@@ -43,21 +48,20 @@ namespace WebAPIStore.Controllers
         }
 
         [HttpGet("{Id:int}")]
-        public IActionResult GetProductById(int? Id)
+        // More Than One Expected Return 
+        [ProducesResponseType(typeof(List<TypeBrandDTO>), (int)HttpStatusCode.OK)]
+        [ProducesResponseType(typeof(ApiErrorResponse), (int)HttpStatusCode.NotFound)]
+        public IActionResult GetProductById(int Id)
         {
-            if(Id is null)
-            {
-                return null;
-            }
+            ProductDTO Product = ProductService.GetProductById(Id);
 
-            ProductDTO Product = ProductService.GetProductById((int)Id);
-
-            if(Product is not null)
+            if (Product is not null)
             {
                 return Ok(Product);
             }
 
-            return NotFound();
+            //return NotFound(new ApiErrorResponse(404, "This Resource Not Found"));
+            return NotFound(new ApiErrorResponse((int)HttpStatusCode.NotFound));
         }
     }
 }
