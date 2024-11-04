@@ -1,4 +1,5 @@
 using DomainStore.Interfaces;
+using DomainStore.Interfaces.Caching;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
@@ -6,6 +7,7 @@ using RepositoryStore.Data.Contexts;
 using RepositoryStore.Data.SeedData;
 using RepositoryStore.Repositories;
 using ServiceStore.Services;
+using ServiceStore.Services.Chacing;
 using StackExchange.Redis;
 using System.Net;
 using WebAPIStore.Helpers;
@@ -36,6 +38,8 @@ namespace WebAPIStore
             });
 
             builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
+
+            builder.Services.AddSingleton<ICachService, CachService>();
 
             builder.Services.AddScoped<IProductService, ProductService>();
 

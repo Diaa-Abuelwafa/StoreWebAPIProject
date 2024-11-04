@@ -5,6 +5,7 @@ using DomainStore.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System.Net;
+using WebAPIStore.Attributes;
 using WebAPIStore.Helpers;
 
 namespace WebAPIStore.Controllers
@@ -19,6 +20,7 @@ namespace WebAPIStore.Controllers
             this.ProductService = ProductService;
         }
 
+        [Cached(100)]
         [HttpGet]
         [ProducesResponseType(typeof(List<PaginationResponse<ProductDTO>>), (int)HttpStatusCode.OK)]
         public IActionResult GetAllProducts([FromQuery] ProductSpecParams Spec)
