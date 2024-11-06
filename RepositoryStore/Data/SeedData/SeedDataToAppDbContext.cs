@@ -1,4 +1,5 @@
 ﻿using DomainStore.Models;
+using DomainStore.Models.OrderModule;
 using RepositoryStore.Data.Contexts;
 using System;
 using System.Collections.Generic;
@@ -51,6 +52,20 @@ namespace RepositoryStore.Data.SeedData
                 if (Products is not null && Products.Count() > 0)
                 {
                     Context.Products.AddRange(Products);
+                    Context.SaveChanges();
+                }
+            }
+
+            if (Context.DeliveryMethods.Count() == 0)
+            {
+                // Seed Data Of Brands
+                var DeliveryJson = File.ReadAllText("../RepositoryStore/Data/SeedData/OrderSeedData/delivery.json");
+
+                List<DeliveryMethod>? Delivery = JsonSerializer.Deserialize<List<DeliveryMethod>>(DeliveryJson);
+
+                if (Delivery is not null && Delivery.Count() > 0)
+                {
+                    Context.DeliveryMethods.AddRange(Delivery);
                     Context.SaveChanges();
                 }
             }
