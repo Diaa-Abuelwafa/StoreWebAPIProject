@@ -30,7 +30,8 @@ namespace ServiceStore.Services.Account
             {
                 DisplayName = User.DisplayName,
                 UserName = User.UserName,
-                Email = User.Email
+                Email = User.Email,
+                AddressId = User.AddressId
             };
 
             ApplicationUser UserByEmail = await UserManager.FindByEmailAsync(User.Email);
@@ -75,6 +76,28 @@ namespace ServiceStore.Services.Account
             }
 
             return null;
+        }
+
+        public UserResponse GetCurrentUser(string Id)
+        {
+            ApplicationUser UserFromDb = UserManager.FindByEmailWithId(Id);
+
+            if(UserFromDb is null)
+            {
+                return null;
+            }
+
+            UserResponse UserResponse = new UserResponse()
+            {
+                Email = UserFromDb.Email,
+            };
+
+            if(UserFromDb.Address is not null)
+            {
+                UserResponse.AddressCity = UserFromDb.Address.City;
+            }
+
+            return UserResponse;
         }
     }
 }

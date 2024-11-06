@@ -22,5 +22,6 @@ namespace DomainStore.DTOs.AccountDTOs
         [Required(ErrorMessage = "Please Enter Your Email Address")]
         [DataType(DataType.EmailAddress)]
         public string Email { get; set; }
+        public int AddressId { get; set; }
     }
 }

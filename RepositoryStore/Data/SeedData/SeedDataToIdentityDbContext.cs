@@ -26,20 +26,6 @@ namespace RepositoryStore.Data.SeedData
                     Context.SaveChanges();
                 }
             }
-
-            if (Context.Users.Count() == 0)
-            {
-                // Seed Data Of Brands
-                var UsersJson = File.ReadAllText("../RepositoryStore/Data/SeedData/IdentitySeedData/Users.json");
-
-                List<ApplicationUser>? Users = JsonSerializer.Deserialize<List<ApplicationUser>>(UsersJson);
-
-                if (Users is not null && Users.Count() > 0)
-                {
-                    Context.Users.AddRange(Users);
-                    Context.SaveChanges();
-                }
-            }
         }
     }
 }

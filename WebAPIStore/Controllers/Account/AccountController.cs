@@ -1,8 +1,10 @@
 ﻿using DomainStore.DTOs.AccountDTOs;
 using DomainStore.Interfaces.Account;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System.Net;
+using System.Security.Claims;
 using WebAPIStore.Helpers;
 
 namespace WebAPIStore.Controllers.Account
@@ -42,6 +44,27 @@ namespace WebAPIStore.Controllers.Account
             }
 
             return Unauthorized(new ApiErrorResponse((int)HttpStatusCode.Unauthorized, "Invalid Username Or Password"));
+        }
+
+        [HttpGet("Current")]
+        [Authorize]
+        public IActionResult GetCurrentUser()
+        {
+            var Id = User.FindFirstValue(ClaimTypes.NameIdentifier);
+
+            if(Id is null)
+            {
+                return NotFound(new ApiErrorResponse((int)HttpStatusCode.NotFound, "No User With This Id"));
+            }
+
+            UserResponse UserResponse = AccountService.GetCurrentUser(Id);
+
+            if(UserResponse is null)
+            {
+                return NotFound(new ApiErrorResponse((int)HttpStatusCode.NotFound, "No User With This Id"));
+            }
+
+            return Ok(UserResponse);
         }
     }
 }
