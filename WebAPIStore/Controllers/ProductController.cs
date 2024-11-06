@@ -2,6 +2,7 @@
 using DomainStore.HelperClasses;
 using DomainStore.Interfaces;
 using DomainStore.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System.Net;
@@ -33,6 +34,7 @@ namespace WebAPIStore.Controllers
         [HttpGet]
         [Route("Brands")]
         [ProducesResponseType(typeof(List<TypeBrandDTO>), (int)HttpStatusCode.OK)]
+        [Authorize]
         public IActionResult GetAllBrands()
         {
             List<TypeBrandDTO> Brands = ProductService.GetAllBrands();
